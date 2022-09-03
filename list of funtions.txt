@@ -1,0 +1,24 @@
+
+
+list_databse_names() - list all databases in the server 
+Example: client.list_databse_names()
+
+list_collection_names() - list all collections in the database
+Example: client.list_collection_names()
+
+insert_one() - insert one document into the collection
+Example: client.insert_one({"name": "John", "age": 30})
+
+
+insert_many() - insert many documents into the collection
+Example: client.insert_many([{"name": "John", "age": 30}, {"name": "Mary", "age": 30}])
+
+find_one() - find one document in the collection
+Example: client.find_one({"name": "John"})
+Example: client.find_one({"name": "John"}, {"_id": 0, "name": 1, "age": 1})
+In the second example, we are returning only the name and age fields of the
+document and excluding the _id field.
+
+find() - find all documents in the collection. (Perform Iteration to get the documents)
+Example: for x in client.find('{"name": "John"}'):
+    print(x)
